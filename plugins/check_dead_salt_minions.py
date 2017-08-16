@@ -7,7 +7,7 @@ import nagiosplugin
 
 
 def get_active_minions():
-    client = docker.Client(base_url='unix://var/run/docker.sock')
+    client = docker.APIClient(base_url='unix://var/run/docker.sock')
     docker_exec = client.exec_create('salt-master', 'salt-run --out json manage.up', stderr=False)
     result = client.exec_start(docker_exec['Id'])
     return json.loads(result)
