@@ -1,4 +1,4 @@
-FROM aexea/django-base:py2
+FROM axsemantics/django-base:py3.8-buster
 MAINTAINER Aexea Carpentry
 
 WORKDIR plugins
